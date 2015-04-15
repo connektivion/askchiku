@@ -1,0 +1,74 @@
+	<html>
+	<title>ASK CHEEKU</title>
+	<head>
+		<link href="images/favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+	<div >
+		<div id="put_center">
+		<div id="content">
+
+				<div id="divPlayAreaExt">
+				<div id="divLicense" style="display:none"></div>
+				<div id="divPlayArea">
+					<div id="petition"><br>
+						<input id="btnClear" type="button" value="Clear" onclick="reset()" class="btn btnSmall"/>
+						<br>
+						<div class="lbl"><b>Petition:</b></div>
+						<i>Cheeku please answer the following question:</i><br>
+						<input id="txtpetition" type="text" onkeypress="return O00OOOO(event, this)" onkeydown="O00OOO0(event)" onpaste="return false;" oncontextmenu="return false;" class="input"/>
+					</div>
+					<div id="question">
+						
+						<div class="lbl"><b>Question:</b></div>
+						<input id="txtquestion" type="text" onkeypress="return O0O0000(event, this)" onkeydown="O000OOO(event)" onpaste="return false;" oncontextmenu="return false;" class="input" onkeyup="loaderokd();" />
+					</div>
+					<input id="btnAsk" type="button" value="OK" onclick="submitThis()" class="btn btnSmall"/>
+					<input id="btnNew" type="button" value="New Question" onclick="reset()" class="btn btnLarge" style="visibility:hidden"/>
+
+					<div id="output" class="answer"></div><div id="fader"></div><br>
+
+				</div>
+			</div>
+
+
+			</div>
+		</div>
+		</div>
+		<!--<img src="images/dhoop.gif" id="jadoo" style="no-repeat"></img>-->
+		<script type="text/javascript">
+			/*Labels */
+			var O000000 = "EN";
+			var mask = "Cheeku please answer me:";
+			var O000O00 = "<img alt=\"Loading\" src=\"loading.gif\" style=\"border:0; width:124px; height:11px;\" />";
+			var O000O0O = "No connection.";
+			var error_pet = "You must enter a valid petition.";
+			var O0O0OO0 = "You must enter a valid question.";
+
+			function loaderokd(){
+			if(window.XMLHttpRequest){
+				var text=document.getElementById("txtquestion").value;
+				xmlhttp=new XMLHttpRequest();
+			}else{
+				xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			xmlhttp.onreadystatechange=function(){
+				if(xmlhttp.readyState==4&&xmlhttp.status==200){
+					document.getElementById("output").innerHTML=xmlhttp.responseText;
+
+				}
+
+			}
+			xmlhttp.open('GET','autosuggest.php?query='+text,true);
+			xmlhttp.send();
+		}
+		</script>
+
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/override.js"></script>
+		<script type="text/javascript" src="js/jscr.js"></script>
+	</body>
+	</html>

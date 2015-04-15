@@ -1,0 +1,32 @@
+body{
+	background: url(../images/nayachenga.gif) no-repeat center center fixed; 
+ 
+  background-size: 100% 130%;
+  background-position-y: 55%;
+}
+#put_center{
+	position: absolute;
+	width: 370px;
+	height:370px;
+	top:22.36%;
+	left:40%;
+
+}
+#btnClear{
+	margin-left: 100px;
+}
+#btnAsk{
+	margin-left: 100px;
+}
+#jadoo{
+	width: 100px;
+	height:100px;
+	//background: url(../images/jadoo.gif) no-repeat center center fixed; 
+}
+.chenga{
+	background: url(../images/asa.gif) no-repeat center center fixed;
+	
+  background-position-y: -145px;
+  background-size: 100% 130%;
+  background-position-y: 55%;
+}
